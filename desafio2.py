@@ -17,29 +17,9 @@ import sys
 
 def repeatedString(s, n):
     # Write your code here
-    string = s
-    number = n
-    a_count = 0
-
-    if len(string) <= number:
-        for letter in string:
-            if 'a' in letter:
-                a_count += 1
-
-        a_count *= (((a_count*100)/len(string))/100)
-
-        a_count_aux = 0
-        for letter in string[:number-len(string)]:
-            if 'a' in letter:
-                a_count_aux += 1
-        a_count += a_count_aux
-    
-    else:
-        for letter in s[:n]:
-            if 'a' in letter:
-                a_count += 1
-            
-    return a_count
+    qtd = n / len(s)
+    a_string = s.count('a')
+    return round(qtd * a_string)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
